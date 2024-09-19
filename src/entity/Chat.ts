@@ -16,6 +16,6 @@ export class Chat {
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToMany(() => Message, (message) => message.chat)
+  @OneToMany(() => Message, (message) => message.chat, { cascade: true, onDelete: 'CASCADE' })
   messages: Message[];
 }
